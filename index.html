@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portafolio de Sien - Artes Visuales, Montevideo, Uruguay">
+
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://www.instagram.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; frame-src https://www.instagram.com https://www.behance.net; connect-src 'self'; form-action https://formspree.io; frame-ancestors 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+
     <title>Sien | Artes Visuales</title>
     <link rel="icon" type="image/png" href="logo_real_circle.png">
     <link rel="apple-touch-icon" href="logo_real_circle.png">
@@ -24,8 +32,8 @@
             <h1>SIEN</h1>
             <p class="subtitle">Artes Visuales</p>
             <p class="location">Montevideo, Uruguay 📍</p>
-            <a href="https://www.instagram.com/sien_______/" target="_blank" rel="noopener noreferrer"
-                class="social-link">@sien_______</a>
+            <a href="https://www.instagram.com/sien_______/" target="_blank" rel="external noopener noreferrer"
+                class="social-link" referrerpolicy="strict-origin-when-cross-origin">@sien_______</a>
         </div>
     </header>
 
@@ -33,31 +41,39 @@
         <h2 class="section-title mt-publications">Publicaciones</h2>
         <div class="gallery">
             <!-- Simulating recent posts based on description -->
-            <a href="https://www.instagram.com/p/DT_fsrCDpEc/?img_index=1" target="_blank" rel="noopener noreferrer"
-                class="gallery-item" aria-label="Ver en Instagram">
-                <img src="art1.jpg" alt="Obra de arte digital" class="art-image">
+            <a href="https://www.instagram.com/p/DT_fsrCDpEc/?img_index=1" target="_blank"
+                rel="external noopener noreferrer" class="gallery-item" aria-label="Ver en Instagram"
+                referrerpolicy="strict-origin-when-cross-origin">
+                <img src="art1.jpg" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    alt="Obra de arte digital" class="art-image">
                 <div class="item-overlay">
                     <p>Ver en Instagram ↗</p>
                 </div>
             </a>
-            <a href="https://www.instagram.com/p/Cy4eU5CuT2b/?img_index=1" target="_blank" rel="noopener noreferrer"
-                class="gallery-item" aria-label="Ver en Instagram">
-                <img src="art2.png" alt="Obra de arte digital 2" class="art-image">
+            <a href="https://www.instagram.com/p/Cy4eU5CuT2b/?img_index=1" target="_blank"
+                rel="external noopener noreferrer" class="gallery-item" aria-label="Ver en Instagram"
+                referrerpolicy="strict-origin-when-cross-origin">
+                <img src="art2.png" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    alt="Obra de arte digital 2" class="art-image">
                 <div class="item-overlay">
                     <p>Ver en Instagram ↗</p>
                 </div>
             </a>
-            <a href="https://www.instagram.com/p/DSgNCKAjnmi/?img_index=2" target="_blank" rel="noopener noreferrer"
-                class="gallery-item" aria-label="Ver en Instagram">
-                <img src="art3.jpg" alt="Obra de arte digital 3" class="art-image">
+            <a href="https://www.instagram.com/p/DSgNCKAjnmi/?img_index=2" target="_blank"
+                rel="external noopener noreferrer" class="gallery-item" aria-label="Ver en Instagram"
+                referrerpolicy="strict-origin-when-cross-origin">
+                <img src="art3.jpg" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    alt="Obra de arte digital 3" class="art-image">
                 <div class="item-overlay">
                     <p>Ver en Instagram ↗</p>
                 </div>
             </a>
             <!-- Extra generic placeholders to fill grid -->
-            <a href="https://www.instagram.com/p/DMMBtqMOUmx/?img_index=1" target="_blank" rel="noopener noreferrer"
-                class="gallery-item" aria-label="Ver en Instagram">
-                <img src="art4.jpg" alt="Obra de arte digital 4" class="art-image">
+            <a href="https://www.instagram.com/p/DMMBtqMOUmx/?img_index=1" target="_blank"
+                rel="external noopener noreferrer" class="gallery-item" aria-label="Ver en Instagram"
+                referrerpolicy="strict-origin-when-cross-origin">
+                <img src="art4.jpg" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    alt="Obra de arte digital 4" class="art-image">
                 <div class="item-overlay">
                     <p>Ver en Instagram ↗</p>
                 </div>
@@ -67,34 +83,34 @@
         <h2 class="section-title mt-works">Trabajos</h2>
         <p class="subtitle portfolio-subtitle">Portfolio</p>
         <div class="portfolio-link-container">
-            <a href="https://www.behance.net/sien" target="_blank" rel="noopener noreferrer"
-                class="social-link">Behance</a>
+            <a href="https://www.behance.net/sien" target="_blank" rel="external noopener noreferrer"
+                class="social-link" referrerpolicy="strict-origin-when-cross-origin">Behance</a>
         </div>
         <div class="gallery">
             <div class="gallery-item">
-                <video src="Video1.mp4" class="art-image" autoplay loop muted playsinline
-                    style="object-fit: cover;"></video>
+                <video src="Video1.mp4" class="art-image" autoplay loop muted playsinline style="object-fit: cover;"
+                    title="Visuales generativas en TouchDesigner - Proyecto Clutch 2025"></video>
                 <div class="item-overlay">
                     <p>Clutch 2025</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <video src="Video2.mp4" class="art-image" autoplay loop muted playsinline
-                    style="object-fit: cover;"></video>
+                <video src="Video2.mp4" class="art-image" autoplay loop muted playsinline style="object-fit: cover;"
+                    title="Instalación lumínica y visual - Proyecto Atemporal 2025"></video>
                 <div class="item-overlay">
                     <p>Atemporal 2025</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <video src="Video3.mp4" class="art-image" autoplay loop muted playsinline
-                    style="object-fit: cover;"></video>
+                <video src="Video3.mp4" class="art-image" autoplay loop muted playsinline style="object-fit: cover;"
+                    title="Experiencia inmersiva y mapping - Proyecto Esto.es 2025"></video>
                 <div class="item-overlay">
                     <p>Esto.es 2025</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <video src="Video4.mp4" class="art-image" autoplay loop muted playsinline
-                    style="object-fit: cover;"></video>
+                <video src="Video4.mp4" class="art-image" autoplay loop muted playsinline style="object-fit: cover;"
+                    title="Performance audiovisual y live coding - Proyecto Foco 2025"></video>
                 <div class="item-overlay">
                     <p>Foco 2025</p>
                 </div>
@@ -105,9 +121,11 @@
     <section class="contact-section">
         <h2 class="section-title">Trabajemos juntos!</h2>
         <form action="https://formspree.io/f/xgoyzyqk" method="POST" class="contact-form">
+            <!-- Honeypot for spambots -->
+            <input type="text" name="_gotcha" style="display:none">
             <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" id="name" name="Nombre" required placeholder="Tu nombre">
+                <input type="text" id="name" name="Nombre" required minlength="2" placeholder="Tu nombre">
             </div>
             <div class="form-group">
                 <label for="contact">Contacto</label>
@@ -115,7 +133,8 @@
             </div>
             <div class="form-group">
                 <label for="proposal">Propuesta</label>
-                <textarea id="proposal" name="Propuesta" required placeholder="Cuéntame tu idea..." rows="4"></textarea>
+                <textarea id="proposal" name="Propuesta" required minlength="10" placeholder="Cuéntame tu idea..."
+                    rows="4"></textarea>
             </div>
             <button type="submit" class="submit-btn">Enviar</button>
         </form>
