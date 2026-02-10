@@ -1,30 +1,58 @@
 :root {
-    --bg-color: #0a0a0a;
-    --text-color: #e0e0e0;
-    --accent-color: #888;
-    --card-bg: #111;
-    --font-main: 'Inter', sans-serif;
-    --spacing-unit: 1.5rem;
+    --bg-color: #050505;
+    --text-color: #f5f5f5;
+    --accent-color: #00f3ff;
+    --card-bg: #0a0a0a;
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --spacing-unit: 2rem;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none;
+    /* Hide default cursor */
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
+/* Custom Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+.cursor.hovered {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: transparent;
+}
+
 a {
     color: inherit;
     text-decoration: none;
     transition: opacity 0.3s ease;
+    cursor: none;
 }
 
 a:hover {
@@ -33,7 +61,7 @@ a:hover {
 
 /* Hero Section */
 .hero {
-    min-height: 80vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +70,7 @@ a:hover {
     animation: fadeIn 1.5s ease-out;
     position: relative;
     overflow: hidden;
-    padding-top: 5rem;
+    padding-top: 0;
 }
 
 .cover-image {
@@ -53,82 +81,100 @@ a:hover {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.2;
+    /* Reduced opacity for dark theme */
+    filter: grayscale(100%);
+    /* Desaturate cover for atmosphere */
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    letter-spacing: -2px;
-    margin-bottom: 0.5rem;
+    font-family: 'Syncopate', sans-serif;
+    /* Modern, wide font */
+    font-size: 10vw;
+    /* Slightly smaller to fit Syncopate's width */
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 0;
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 0.9;
+    color: #ffffff;
+    /* Solid white */
+    cursor: default;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .profile-logo {
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: contain;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+    margin-bottom: 2rem;
+    filter: none;
+    /* Full color */
 }
 
 .subtitle {
-    font-size: 1.25rem;
-    color: #fff;
-    /* Updated from accent-color for contrast with shadow */
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    opacity: 0.8;
 }
 
 .location {
-    font-size: 0.9rem;
-    color: #f0f0f0;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    opacity: 0.6;
 }
 
 .social-link {
     border: 1px solid var(--text-color);
-    padding: 0.5rem 1.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 0;
+    /* Sharp corners for modern look, or keeping rounded if preferred, stick to 50px for pill */
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: transparent;
+    color: var(--text-color);
     transition: all 0.3s ease;
+    cursor: none;
+    /* For custom cursor */
 }
 
 .social-link:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
-    opacity: 1;
 }
 
 /* Section Title */
 .section-title {
     text-align: center;
-    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    /* Larger */
     font-weight: 700;
-    margin-bottom: 2rem;
-    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--text-color);
     opacity: 0;
-    transform: translateY(10px);
-    animation: fadeInUp 1s ease-out 0.5s forwards;
-    position: relative;
-    /* Removed display: inline-block, left: 50%, and generic transform hack to allow natural flow centering */
+    transform: translateY(20px);
+    /* Removed underline after element */
 }
 
 .section-title::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: var(--accent-color);
-    margin: 10px auto 0;
-    opacity: 0.5;
+    display: none;
 }
 
 @keyframes fadeInUp {
@@ -141,11 +187,11 @@ a:hover {
 /* Gallery Grid */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2px;
-    /* Minimal gap for that sharp grid look */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    /* Generous spacing */
     padding: var(--spacing-unit);
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     width: 100%;
 }
@@ -155,37 +201,12 @@ a:hover {
     aspect-ratio: 1 / 1;
     background-color: var(--card-bg);
     overflow: hidden;
-    cursor: pointer;
+    cursor: none;
+    transition: transform 0.3s ease;
 }
 
-.placeholder-art {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.8rem;
-    color: #333;
-    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
-    background: linear-gradient(45deg, #111, #1a1a1a);
-}
-
-/* Simulating different art vibes */
-.art-1 {
-    background: radial-gradient(circle at center, #222, #000);
-}
-
-.art-2 {
-    background: linear-gradient(to bottom, #151515, #050505);
-}
-
-.art-3 {
-    background: repeating-linear-gradient(45deg, #111, #111 10px, #161616 10px, #161616 20px);
-}
-
-.gallery-item:hover .placeholder-art,
-.gallery-item:hover .art-image {
-    transform: scale(1.05);
+.gallery-item:hover {
+    z-index: 10;
 }
 
 .art-image {
@@ -193,7 +214,13 @@ a:hover {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    filter: contrast(1.1);
+    /* Slight boost, no grayscale */
+    transition: transform 0.7s ease;
+}
+
+.gallery-item:hover .art-image {
+    transform: scale(1.02);
 }
 
 .item-overlay {
@@ -202,13 +229,12 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    backdrop-filter: blur(2px);
 }
 
 .gallery-item:hover .item-overlay {
@@ -223,23 +249,52 @@ a:hover {
     padding-bottom: 2px;
 }
 
+/* Works Gallery - Staggered Layout */
+.works-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for better stagger */
+    align-items: center;
+}
+
+.works-gallery .gallery-item:nth-child(even) {
+    transform: translateY(4rem);
+}
+
+.works-gallery .gallery-item:hover {
+    z-index: 20;
+}
+
+/* Works Gallery Hover Fix to not conflict with stagger */
+.works-gallery .gallery-item:nth-child(even):hover {
+    transform: translateY(4rem) scale(1.02);
+}
+
+
+
+
 /* Footer */
 footer {
     text-align: center;
-    padding: 4rem 1rem;
-    color: #333;
-    font-size: 0.8rem;
+    padding: 6rem 1rem 4rem;
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 footer a {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-color);
     margin-left: 10px;
+    cursor: none;
 }
 
 /* Contact Section */
 .contact-section {
-    max-width: 600px;
-    margin: 6rem auto 4rem;
+    max-width: 700px;
+    margin: 10rem auto 6rem;
     padding: 0 var(--spacing-unit);
     text-align: center;
 }
@@ -247,78 +302,89 @@ footer a {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-    margin-top: 2rem;
+    gap: 2rem;
+    text-align: left;
+    margin-top: 4rem;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    position: relative;
 }
 
 .form-group label {
-    font-size: 0.9rem;
-    color: var(--accent-color);
-    font-weight: 300;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
 }
 
 .form-group input,
 .form-group textarea {
-    background-color: var(--card-bg);
-    border: 1px solid #222;
-    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 1rem 0;
     color: var(--text-color);
-    font-family: var(--font-main);
-    font-size: 1rem;
-    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    border-radius: 0;
     transition: border-color 0.3s ease;
+    cursor: none;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--text-color);
+    border-color: var(--accent-color);
 }
 
 .form-group textarea {
-    resize: none;
+    resize: vertical;
+    min-height: 100px;
 }
 
 .submit-btn {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    border: none;
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: opacity 0.3s ease;
-    margin-top: 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 1rem 3rem;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    cursor: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: 2rem;
 }
 
 .submit-btn:hover {
-    opacity: 0.8;
+    background-color: var(--text-color);
+    color: var(--bg-color);
 }
 
 /* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        filter: blur(10px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        filter: blur(0);
     }
 }
 
 /* Section Spacing */
 .mt-publications {
-    margin-top: 6rem;
+    margin-top: 5rem;
 }
 
 .mt-works {
